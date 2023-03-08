@@ -1,5 +1,9 @@
-import dao.*;
-import dao.interfaces.DAO;
+import user.DaoCarService;
+import user.DaoClientService;
+import user.DaoColorService;
+import user.DaoOrderService;
+import user.DaoUserService;
+import user.interfaces.DAO;
 import entity.User;
 import entity.cars.*;
 import entity.clients.Client;
@@ -17,11 +21,11 @@ public class Main {
     }
 
     private static void fillTestData() {
-        DAO<User> userDAO = new DaoUserImpl();
-        DAO<Client> clientDAO = new DaoClientImpl();
-        DAO<ClientOrder> clientOrderDAO = new DaoClientOrderImpl();
-        DAO<Car> carDAO = new DaoCarImpl();
-        DAO<Color> colorDAO = new DaoColorImpl();
+        DAO<User> userDAO = new DaoUserService();
+        DAO<Client> clientDAO = new DaoClientService();
+        DAO<ClientOrder> clientOrderDAO = new DaoOrderService();
+        DAO<Car> carDAO = new DaoCarService();
+        DAO<Color> colorDAO = new DaoColorService();
 
         User user = new User();
         Client client = new Client();
