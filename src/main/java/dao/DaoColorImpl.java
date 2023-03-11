@@ -1,6 +1,6 @@
-package user;
+package dao;
 
-import user.interfaces.DaoColor;
+import dao.interfaces.DaoColor;
 import entity.cars.Color;
 
 public class DaoColorImpl extends DaoImpl<Color> implements DaoColor {

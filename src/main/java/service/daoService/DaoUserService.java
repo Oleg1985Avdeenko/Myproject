@@ -1,7 +1,7 @@
 package service.daoService;
 
-import user.DaoUserImpl;
-import user.interfaces.DAO;
+import dao.DaoUserImpl;
+import dao.interfaces.DAO;
 import entity.User;
 import service.Service;
 import service.dto.UserDto;

@@ -1,9 +1,9 @@
-import user.DaoCarService;
-import user.DaoClientService;
-import user.DaoColorService;
-import user.DaoOrderService;
-import user.DaoUserService;
-import user.interfaces.DAO;
+import dao.DaoCarService;
+import dao.DaoClientService;
+import dao.DaoColorService;
+import dao.DaoOrderService;
+import dao.DaoUserService;
+import dao.interfaces.DAO;
 import entity.User;
 import entity.cars.*;
 import entity.clients.Client;
@@ -66,7 +66,7 @@ public class Main {
         opnion.setFogLight(true);
         opnion.setCarOption(car);
 
-        transmission.setType("7 DCT");
+        transmission.setTransmissionType("7 DCT");
         transmission.setCarTransmission(car);
 
         car.setPrice(new BigDecimal(75950));

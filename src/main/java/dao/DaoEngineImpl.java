@@ -1,6 +1,6 @@
-package user;
+package dao;
 
-import user.interfaces.DaoEngine;
+import dao.interfaces.DaoEngine;
 import entity.cars.Engine;
 
 public class DaoEngineImpl extends DaoImpl<Engine> implements DaoEngine {

@@ -1,4 +1,4 @@
-package user.interfaces;
+package dao.interfaces;
 
 import entity.cars.Transmission;
 

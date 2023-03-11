@@ -1,6 +1,6 @@
-package user;
+package dao;
 
-import user.interfaces.DaoUser;
+import dao.interfaces.DaoUser;
 import entity.User;
 
 public class DaoUserImpl extends DaoImpl<User> implements DaoUser {

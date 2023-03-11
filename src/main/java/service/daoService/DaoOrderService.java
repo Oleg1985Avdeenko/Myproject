@@ -4,8 +4,8 @@ import service.Service;
 import service.dto.OrderDto;
 import service.mapping.MappingOrder;
 import service.mapping.MappingService;
-import user.DaoClientOrderImpl;
-import user.interfaces.DAO;
+import dao.DaoClientOrderImpl;
+import dao.interfaces.DAO;
 import entity.clients.ClientOrder;
 
 import java.util.List;

@@ -4,8 +4,8 @@ import service.Service;
 import service.dto.TransmissionDto;
 import service.mapping.MappingService;
 import service.mapping.MappingTrandmission;
-import user.DaoTransmissionImpl;
-import user.interfaces.DAO;
+import dao.DaoTransmissionImpl;
+import dao.interfaces.DAO;
 import entity.cars.Transmission;
 
 import java.util.List;

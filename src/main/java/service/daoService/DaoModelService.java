@@ -5,8 +5,8 @@ import service.Service;
 import service.dto.ModelDto;
 import service.mapping.MappingModel;
 import service.mapping.MappingService;
-import user.DaoModelImpl;
-import user.interfaces.DAO;
+import dao.DaoModelImpl;
+import dao.interfaces.DAO;
 import entity.cars.Model;
 
 import java.util.List;

@@ -5,8 +5,8 @@ import service.Service;
 import service.dto.ColorDto;
 import service.mapping.MappingColor;
 import service.mapping.MappingService;
-import user.DaoColorImpl;
-import user.interfaces.DAO;
+import dao.DaoColorImpl;
+import dao.interfaces.DAO;
 
 
 import java.util.List;

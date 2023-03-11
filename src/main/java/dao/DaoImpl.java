@@ -1,6 +1,6 @@
-package user;
+package dao;
 
-import user.interfaces.DAO;
+import dao.interfaces.DAO;
 import utils.HibernateUtil;
 
 import javax.persistence.EntityManager;

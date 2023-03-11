@@ -1,6 +1,6 @@
-package user;
+package dao;
 
-import user.interfaces.DaoModelOption;
+import dao.interfaces.DaoModelOption;
 import entity.cars.ModelOpnion;
 
 public class DaoModelOptionImpl extends DaoImpl<ModelOpnion> implements DaoModelOption {
