@@ -45,7 +45,7 @@ public class DaoEngineService implements Service<EngineDto> {
     }
 
     @Override
-    public List<EngineDto> findAll(EngineDto engineDto) {
+    public List<EngineDto> findAll() {
         List<Engine> engines = engineDAO.findAll(Engine.builder().build());
         return engines.stream()
                 .map(mappingEngine::convertToDTO)

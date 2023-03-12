@@ -2,7 +2,6 @@ package converter;
 
 import service.dto.CarDto;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import java.math.BigDecimal;
@@ -14,7 +13,7 @@ public class ConverterCar {
     public static CarDto convertCar(HttpServletRequest req) {
         String id = req.getParameter(CAR_ID);
         String price = req.getParameter(PRICE);
-        String availability = req.getParameter(AVAILABILITY_TRUE);
+        String availability = req.getParameter(AVAILABILITY);
         CarDto carDto = CarDto.builder()
                 .price(new BigDecimal(price))
                 .availability(Boolean.valueOf(availability))

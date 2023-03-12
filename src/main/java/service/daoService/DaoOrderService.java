@@ -45,7 +45,7 @@ public class DaoOrderService implements Service<OrderDto> {
     }
 
     @Override
-    public List<OrderDto> findAll(OrderDto orderDto) {
+    public List<OrderDto> findAll() {
         List<ClientOrder> orders = daoClientOrder.findAll(ClientOrder.builder().build());
         return orders.stream()
                 .map(mappingOrder::convertToDTO)

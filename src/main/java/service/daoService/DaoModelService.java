@@ -46,7 +46,7 @@ public class DaoModelService implements Service<ModelDto> {
     }
 
     @Override
-    public List<ModelDto> findAll(ModelDto modelDto) {
+    public List<ModelDto> findAll() {
         List<Model> models = clientDAO.findAll(Model.builder().build());
         return models.stream()
                 .map(mappingModel::convertToDTO)

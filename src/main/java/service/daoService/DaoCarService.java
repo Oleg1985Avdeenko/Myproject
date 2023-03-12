@@ -45,7 +45,7 @@ public class DaoCarService implements Service<CarDto> {
     }
 
     @Override
-    public List<CarDto> findAll(CarDto carDto) {
+    public List<CarDto> findAll() {
         List<Car> clients = carDAO.findAll(Car.builder().build());
         return clients.stream()
                 .map(mappingCar::convertToDTO)

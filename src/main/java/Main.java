@@ -1,8 +1,4 @@
-import dao.DaoCarService;
-import dao.DaoClientService;
-import dao.DaoColorService;
-import dao.DaoOrderService;
-import dao.DaoUserService;
+import dao.*;
 import dao.interfaces.DAO;
 import entity.User;
 import entity.cars.*;
@@ -21,11 +17,11 @@ public class Main {
     }
 
     private static void fillTestData() {
-        DAO<User> userDAO = new DaoUserService();
-        DAO<Client> clientDAO = new DaoClientService();
-        DAO<ClientOrder> clientOrderDAO = new DaoOrderService();
-        DAO<Car> carDAO = new DaoCarService();
-        DAO<Color> colorDAO = new DaoColorService();
+        DAO<User> userDAO = new DaoUserImpl();
+        DAO<Client> clientDAO = new DaoClientImpl();
+        DAO<ClientOrder> clientOrderDAO = new DaoClientOrderImpl();
+        DAO<Car> carDAO = new DaoCarImpl();
+        DAO<Color> colorDAO = new DaoColorImpl();
 
         User user = new User();
         Client client = new Client();
@@ -66,7 +62,7 @@ public class Main {
         opnion.setFogLight(true);
         opnion.setCarOption(car);
 
-        transmission.setTransmissionType("7 DCT");
+        transmission.setType("7 DCT");
         transmission.setCarTransmission(car);
 
         car.setPrice(new BigDecimal(75950));
@@ -85,7 +81,7 @@ public class Main {
         userDAO.save(user);
         clientDAO.save(client);
       //  colorDAO.save(color);
-      //  carDAO.save(car);
+       // carDAO.save(car);
 
     }
 }

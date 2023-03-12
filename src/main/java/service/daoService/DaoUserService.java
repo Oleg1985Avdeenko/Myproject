@@ -46,7 +46,7 @@ public class DaoUserService implements Service<UserDto> {
     }
 
     @Override
-    public List<UserDto> findAll(UserDto userDto) {
+    public List<UserDto> findAll() {
         List<User> users = userDAO.findAll(User.builder().build());
         return users.stream()
                 .map(mappingUser::convertToDTO)

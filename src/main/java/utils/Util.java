@@ -18,7 +18,7 @@ public class Util {
 
     public static final String PRICE = "price";
 
-    public static final String AVAILABILITY_TRUE = "availability";
+    public static final String AVAILABILITY = "availability";
     public static final String COLOR_ID = "colorId";
     public static final String COLOR_NAME = "colorName";
     public static final String ENGINE_ID = "engineId";
@@ -42,6 +42,7 @@ public class Util {
     public static final String CELL_PHONE = "cellPhone";
     public static final String EMAIL = "email";
     public static final String ORDER_ID = "orderId";
+    public static final String CARS = "cars";
 
     public static final String JSP_EDIT_JSP = "jsp/edit.jsp";
 

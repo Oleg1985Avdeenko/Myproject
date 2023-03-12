@@ -47,7 +47,7 @@ public class DaoColorService  implements Service<ColorDto> {
     }
 
     @Override
-    public List<ColorDto> findAll(ColorDto colorDto) {
+    public List<ColorDto> findAll() {
         List<Color> colors = clientDAO.findAll(Color.builder().build());
         return colors.stream()
                 .map(mappingColor::convertToDTO)

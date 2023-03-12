@@ -45,7 +45,7 @@ public class DaoModelOptionService implements Service<OptionDto> {
     }
 
     @Override
-    public List<OptionDto> findAll(OptionDto optionDto) {
+    public List<OptionDto> findAll() {
         List<ModelOpnion> modelOpnions = opnionDAO.findAll(ModelOpnion.builder().build());
         return modelOpnions.stream()
                 .map(mappingOption::convertToDTO)

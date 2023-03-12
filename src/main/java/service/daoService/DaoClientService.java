@@ -46,7 +46,7 @@ public class DaoClientService  implements Service<ClientDto> {
     }
 
     @Override
-    public List<ClientDto> findAll(ClientDto clientDto) {
+    public List<ClientDto> findAll() {
         List<Client> clients = clientDAO.findAll(Client.builder().build());
         return clients.stream()
                 .map(mappingClient::convertToDTO)

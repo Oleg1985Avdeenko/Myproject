@@ -12,5 +12,5 @@ public interface Service<T> {
 
     void delete(T object);
 
-    List<T> findAll(T object);
+    List<T> findAll();
 }

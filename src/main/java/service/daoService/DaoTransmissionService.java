@@ -45,7 +45,7 @@ public class DaoTransmissionService  implements Service<TransmissionDto> {
     }
 
     @Override
-    public List<TransmissionDto> findAll(TransmissionDto transmissionDto) {
+    public List<TransmissionDto> findAll() {
         List<Transmission> transmissions = daoTransmission.findAll(Transmission.builder().build());
         return transmissions.stream()
                 .map(mappingTrandmission::convertToDTO)
