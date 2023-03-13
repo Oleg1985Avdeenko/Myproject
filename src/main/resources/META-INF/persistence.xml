@@ -4,7 +4,7 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
              version="1.0">
 
-    <persistence-unit name="scrum-courses">
+    <persistence-unit name="my-project">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <properties>

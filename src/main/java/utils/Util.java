@@ -43,6 +43,7 @@ public class Util {
     public static final String EMAIL = "email";
     public static final String ORDER_ID = "orderId";
     public static final String CARS = "cars";
+    public static final String COLORS = "colors";
 
     public static final String JSP_EDIT_JSP = "jsp/edit.jsp";
 

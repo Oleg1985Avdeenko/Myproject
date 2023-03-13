@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
   <meta charset="utf-8">
@@ -31,7 +32,7 @@
               <input type="hidden" required name="carId" value="${car.id}">
               <input type="hidden" required name="price" value="${car.price}">
               <input type="hidden" required name="availability" value="${car.availability}">
-              <button type="submit" class="w3-button w3-circle w3-teal">Update</button>
+              <button type="submit" class="w3-button ui-icon-caret-1-w">Update</button>
             </form>
           </td>
           <td>
@@ -40,7 +41,7 @@
               <input type="hidden" required name="carId" value="${car.id}">
               <input type="hidden" required name="price" value="${car.price}">
               <input type="hidden" required name="availability" value="${car.availability}">
-              <button type="submit" class="w3-button w3-circle w3-teal">Delete</button>
+              <button type="submit" class="w3-button ui-icon-caret-1-w">Delete</button>
             </form>
           </td>
         </tr>

@@ -16,11 +16,11 @@
     <input type = "hidden" required name = "command" value="add">
     <input class="w3-input w3-border"  required name = "price" placeholder="Price">
     <input class="w3-input w3-border"  required name = "availability" placeholder="Availability">
-    <button type="submit" class="w3-button w3-circle w3-teal">ADD</button>
+    <button type="submit" class="w3-button ui-icon-caret-1-w">ADD</button>
 </form>
 <form action="servlet" method="get">
     <input type = "hidden" required name = "command" value = "view">
-    <button type="submit" class="w3-button w3-circle w3-teal">List</button>
+    <button type="submit" class="w3-button ui-icon-caret-1-w">List</button>
 </form>
 </body>
 </html>
