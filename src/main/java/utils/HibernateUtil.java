@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class HibernateUtil {
     public static final EntityManagerFactory ENTITY_MANAGER_FACTORY;
-    public static final String PERSISTENCE_UNIT_NAME = "scrum-courses";
+    public static final String PERSISTENCE_UNIT_NAME = "my-project";
 
     static {
         ENTITY_MANAGER_FACTORY = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);

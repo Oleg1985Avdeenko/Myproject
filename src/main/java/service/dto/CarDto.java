@@ -29,19 +29,24 @@ public class CarDto extends DataDto{
     @JoinColumn(name = "order_dto_id", nullable = false)
     private ClientOrder dtoSelectedCar;
 
-    @OneToMany(mappedBy = "carModel", cascade = CascadeType.ALL)
-    private Set<Model> selectedModels = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "model_id", nullable = false)
+    private Model carModel;
 
-    @OneToMany(mappedBy = "carEngine", cascade = CascadeType.ALL)
-    private Set<Engine> selectedEngines = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "engine_id", nullable = false)
+    private Engine carEngine;
 
-    @OneToMany(mappedBy = "carColor", cascade = CascadeType.ALL)
-    private Set<Color> selectedColors = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "color_id", nullable = false)
+    private Color carColor;
 
-    @OneToMany(mappedBy = "carTransmission", cascade = CascadeType.ALL)
-    private Set<Transmission> selectedTransmissions = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "transmission_id", nullable = false)
+    private Transmission carTransmission;
 
-    @OneToMany(mappedBy = "carOption", cascade = CascadeType.ALL)
-    private Set<ModelOpnion> selectedOptions = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "model_option_id", nullable = false)
+    private ModelOpnion carOption;
 
 }

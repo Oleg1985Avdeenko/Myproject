@@ -2,12 +2,15 @@ package service.dto;
 
 
 import entity.cars.Car;
+import entity.cars.Model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -18,7 +21,6 @@ public class ModelDto extends DataDto{
     @Column
     private String modelName;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "car-dto_id", nullable = false)
-    private Car carModel;
+    @OneToMany(mappedBy = "carModel", cascade = CascadeType.ALL)
+    private Set<Car> selectedModels = new HashSet<>();
 }

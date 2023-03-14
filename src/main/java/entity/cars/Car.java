@@ -27,20 +27,25 @@ public class Car extends DataEntity {
     @Column
     private Boolean availability;
 
-    @OneToMany(mappedBy = "carModel", cascade = CascadeType.ALL)
-    private Set<Model> selectedModels = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "model_id", nullable = false)
+    private Model carModel ;
 
-    @OneToMany(mappedBy = "carEngine", cascade = CascadeType.ALL)
-    private Set<Engine> selectedEngines = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "engine_id", nullable = false)
+    private Engine carEngine;
 
-    @OneToMany(mappedBy = "carColor", cascade = CascadeType.ALL)
-    private Set<Color> selectedColors = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "color_id", nullable = false)
+    private Color  carColor;
 
-    @OneToMany(mappedBy = "carTransmission", cascade = CascadeType.ALL)
-    private Set<Transmission> selectedTransmissions = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "transmission_id", nullable = false)
+    private Transmission carTransmission;
 
-    @OneToMany(mappedBy = "carOption", cascade = CascadeType.ALL)
-    private Set<ModelOpnion> selectedOptions = new HashSet<>();
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "model_option_id", nullable = false)
+    private ModelOpnion carOption;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "order_id", nullable = false)

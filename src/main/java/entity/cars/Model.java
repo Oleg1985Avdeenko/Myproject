@@ -7,7 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -20,9 +22,8 @@ public class Model extends DataEntity {
     @Column
     private String modelName;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "car_id", nullable = false)
-    private Car carModel;
+    @OneToMany(mappedBy = "carModel", cascade = CascadeType.PERSIST)
+    private Set<Car> selectedModels = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {

@@ -11,11 +11,11 @@ public class MappingCar implements MappingService<Car, CarDto> {
         car.setPrice(dto.getPrice());
         car.setAvailability(dto.getAvailability());
         car.setSelectedCar(dto.getDtoSelectedCar());
-        car.setSelectedModels(dto.getSelectedModels());
-        car.setSelectedColors(dto.getSelectedColors());
-        car.setSelectedEngines(dto.getSelectedEngines());
-        car.setSelectedOptions(dto.getSelectedOptions());
-        car.setSelectedTransmissions(dto.getSelectedTransmissions());
+        car.setCarModel(dto.getCarModel());
+        car.setCarColor(dto.getCarColor());
+        car.setCarEngine(dto.getCarEngine());
+        car.setCarOption(dto.getCarOption());
+        car.setCarTransmission(dto.getCarTransmission());
         return car;
     }
 
@@ -26,11 +26,11 @@ public class MappingCar implements MappingService<Car, CarDto> {
         carDto.setPrice(entity.getPrice());
         carDto.setAvailability(entity.getAvailability());
         carDto.setDtoSelectedCar(entity.getSelectedCar());
-        carDto.setSelectedModels(entity.getSelectedModels());
-        carDto.setSelectedColors(entity.getSelectedColors());
-        carDto.setSelectedEngines(entity.getSelectedEngines());
-        carDto.setSelectedOptions(entity.getSelectedOptions());
-        carDto.setSelectedTransmissions(entity.getSelectedTransmissions());
+        carDto.setCarModel(entity.getCarModel());
+        carDto.setCarColor(entity.getCarColor());
+        carDto.setCarEngine(entity.getCarEngine());
+        carDto.setCarOption(entity.getCarOption());
+        carDto.setCarTransmission(entity.getCarTransmission());
         return carDto;
     }
 }

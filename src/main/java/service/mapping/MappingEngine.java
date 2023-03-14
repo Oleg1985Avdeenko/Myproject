@@ -10,7 +10,7 @@ public class MappingEngine implements MappingService<Engine, EngineDto> {
         engine.setId(dto.getId());
         engine.setVolume(dto.getVolume());
         engine.setType(dto.getType());
-        engine.setCarEngine(dto.getCarEngine());
+        engine.setSelectedEngines(dto.getSelectedEngines());
         return engine;
     }
 
@@ -20,7 +20,7 @@ public class MappingEngine implements MappingService<Engine, EngineDto> {
         engineDto.setId(entity.getId());
         engineDto.setVolume(entity.getVolume());
         engineDto.setType(entity.getType());
-        engineDto.setCarEngine(entity.getCarEngine());
+        engineDto.setSelectedEngines(entity.getSelectedEngines());
         return engineDto;
     }
 }

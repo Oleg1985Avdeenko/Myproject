@@ -13,7 +13,7 @@ public class MappingOption implements MappingService<ModelOpnion, OptionDto> {
         modelOpnion.setSteeringWheelControl(dto.getSteeringWheelControl());
         modelOpnion.setCruiseControl(dto.getCruiseControl());
         modelOpnion.setFogLight(dto.getFogLight());
-        modelOpnion.setCarOption(dto.getCarOption());
+        modelOpnion.setSelectedOptions(dto.getSelectedOptions());
         return modelOpnion;
     }
 
@@ -26,7 +26,7 @@ public class MappingOption implements MappingService<ModelOpnion, OptionDto> {
         optionDto.setSteeringWheelControl(entity.getSteeringWheelControl());
         optionDto.setCruiseControl(entity.getCruiseControl());
         optionDto.setFogLight(entity.getFogLight());
-        optionDto.setCarOption(entity.getCarOption());
+        optionDto.setSelectedOptions(entity.getSelectedOptions());
         return optionDto;
     }
 }

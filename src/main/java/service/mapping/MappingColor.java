@@ -9,7 +9,7 @@ public class MappingColor implements MappingService<Color, ColorDto> {
         Color color = new Color();
         color.setId(dto.getId());
         color.setColorName(dto.getColorName());
-        color.setCarColor(dto.getCarColor());
+        color.setSelectedColors(dto.getSelectedColors());
         return color;
     }
 
@@ -18,7 +18,7 @@ public class MappingColor implements MappingService<Color, ColorDto> {
         ColorDto colorDto = new ColorDto();
         colorDto.setId(entity.getId());
         colorDto.setColorName(entity.getColorName());
-        colorDto.setCarColor(entity.getCarColor());
+        colorDto.setSelectedColors(entity.getSelectedColors());
         return colorDto;
     }
 }

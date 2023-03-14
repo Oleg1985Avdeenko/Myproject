@@ -9,7 +9,7 @@ public class MappingModel implements MappingService<Model, ModelDto> {
         Model model = new Model();
         model.setId(dto.getId());
         model.setModelName(dto.getModelName());
-        model.setCarModel(dto.getCarModel());
+        model.setSelectedModels(dto.getSelectedModels());
         return model;
     }
 
@@ -18,7 +18,7 @@ public class MappingModel implements MappingService<Model, ModelDto> {
         ModelDto modelDto = new ModelDto();
         modelDto.setId(entity.getId());
         modelDto.setModelName(entity.getModelName());
-        modelDto.setCarModel(entity.getCarModel());
+        modelDto.setSelectedModels(entity.getSelectedModels());
         return modelDto;
     }
 }

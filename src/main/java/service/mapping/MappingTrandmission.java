@@ -9,7 +9,7 @@ public class MappingTrandmission implements MappingService<Transmission, Transmi
         Transmission transmission = new Transmission();
         transmission.setId(dto.getId());
         transmission.setType(dto.getType());
-        transmission.setCarTransmission(dto.getCarTransmission());
+        transmission.setSelectedTransmissions(dto.getSelectedTransmissions());
         return transmission;
     }
 
@@ -18,7 +18,7 @@ public class MappingTrandmission implements MappingService<Transmission, Transmi
         TransmissionDto transmissionDto = new TransmissionDto();
         transmissionDto.setId(entity.getId());
         transmissionDto.setType(entity.getType());
-        transmissionDto.setCarTransmission(entity.getCarTransmission());
+        transmissionDto.setSelectedTransmissions(entity.getSelectedTransmissions());
         return transmissionDto;
     }
 }

@@ -44,35 +44,48 @@ public class Main {
         client.setEmail("Avdeenko-oleg@gmail.com");
         client.getOrders().add(order);
 
-        color.setColorName("black");
-        color.setCarColor(car);
+        car.setId(1);
+        car.setPrice(new BigDecimal(75950));
+        car.setAvailability(true);
 
+        color.setId(45);
+        color.setColorName("black");
+
+        engine.setId(46);
         engine.setType("16 gas");
         engine.setVolume(1.6);
-        engine.setCarEngine(car);
 
+        model.setId(25);
         model.setModelName("Atlas");
-        model.setCarModel(car);
 
-
+        opnion.setId(26);
         opnion.setSalon("Leather");
         opnion.setHeatedSeat(true);
         opnion.setCruiseControl(true);
         opnion.setSteeringWheelControl(true);
         opnion.setFogLight(true);
-        opnion.setCarOption(car);
 
+        transmission.setId(42);
         transmission.setType("7 DCT");
-        transmission.setCarTransmission(car);
 
-        car.setPrice(new BigDecimal(75950));
-        car.setAvailability(true);
-        car.getSelectedColors().add(color);
-        car.getSelectedEngines().add(engine);
-        car.getSelectedModels().add(model);
-        car.getSelectedOptions().add(opnion);
-        car.getSelectedTransmissions().add(transmission);
+        car.setCarColor(color);
+        car.setCarEngine(engine);
+        car.setCarModel(model);
+        car.setCarOption(opnion);
+        car.setCarTransmission(transmission);
         car.setSelectedCar(order);
+
+        color.getSelectedColors().add(car);
+
+        engine.getSelectedEngines().add(car);
+
+        model.getSelectedModels().add(car);
+
+        opnion.getSelectedOptions().add(car);
+
+
+        transmission.getSelectedTransmissions().add(car);
+
 
         order.setClient(client);
         order.getSelectedCars().add(car);
