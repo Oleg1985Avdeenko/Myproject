@@ -27,6 +27,20 @@
           <td>${car.price}</td>
           <td>${car.availability}</td>
           <td>
+            <form action="select1.php" method="get">
+              <p><select>
+                <option disabled>choose a model</option>
+                <option> ${model.modelName}</option>
+              </select></p>
+            </form>
+          </td>
+          <td>
+            <form action="servlet" method = "get" style="align-content: center">
+            <input type = "hidden" required name = "command" value="viewColor">
+            <button type="submit" class="w3-button ui-icon-caret-1-w">List Color</button>
+          </form>
+          </td>
+          <td>
             <form action="servlet" method="get">
               <input type="hidden" required name="command" value="edit">
               <input type="hidden" required name="carId" value="${car.id}">
@@ -52,7 +66,7 @@
 </c:choose>
 <form action="servlet" method="get">
   <input type = "hidden" required name = "command" value="add">
-  <button type="submit " class="w3-button w3-circle w3-teal">Add</button>
+  <button type="submit " class="w3-button ui-icon-caret-1-w"><b>Add</b></button>
 </form>
 </body>
 </html>

@@ -9,16 +9,12 @@
 <body>
 <form action="servlet" method = "get" style="align-content: center">
     <input type = "hidden" required name = "command" value="view">
-    <button type="submit" class="w3-button ui-icon-caret-1-w">List</button>
+    <button type="submit" class="w3-button ui-icon-caret-1-w"><b>List Car</b></button>
 </form>
 
 <form action="servlet" method = "get" style="align-content: center">
     <input type = "hidden" required name = "command" value="add">
-    <button type="submit" class="w3-button ui-icon-caret-1-w">Add Car</button>
-</form>
-<form action="servlet" method = "get" style="align-content: center">
-    <input type = "hidden" required name = "command" value="addColor">
-    <button type="submit" class="w3-button ui-icon-caret-1-w">Add Color</button>
+    <button type="submit" class="w3-button ui-icon-caret-1-w"><b>Add Car</b></button>
 </form>
 </body>
 </html>

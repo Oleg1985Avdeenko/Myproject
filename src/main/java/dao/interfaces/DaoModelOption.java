@@ -1,6 +1,6 @@
 package dao.interfaces;
 
-import entity.cars.ModelOpnion;
+import entity.cars.ModelOption;
 
-public interface DaoModelOption extends DAO<ModelOpnion> {
+public interface DaoModelOption extends DAO<ModelOption> {
 }

@@ -35,6 +35,6 @@ public class ClientDto extends DataDto{
     @Column
     private String email;
 
-    @OneToMany(mappedBy = "clientDto", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "clientDto", cascade = CascadeType.PERSIST)
     private Set<ClientOrder> dtoOrders = new HashSet<>();
 }

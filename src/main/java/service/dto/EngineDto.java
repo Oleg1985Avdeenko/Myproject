@@ -24,6 +24,6 @@ public class EngineDto extends DataDto{
     @Column
     private String type;
 
-    @OneToMany(mappedBy = "carEngine", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "carEngine", cascade = CascadeType.PERSIST)
     private Set<Car> selectedEngines = new HashSet<>();
 }

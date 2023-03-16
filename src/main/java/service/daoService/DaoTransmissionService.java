@@ -12,43 +12,41 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DaoTransmissionService  implements Service<TransmissionDto> {
-    private final DAO<Transmission> daoTransmission = new DaoTransmissionImpl();
+    private final DAO<Transmission> transmissionDAO = new DaoTransmissionImpl();
 
-    private final MappingService<Transmission, TransmissionDto> mappingTrandmission = new MappingTrandmission();
-
+    private final MappingService<Transmission, TransmissionDto> mappingTransmission = new MappingTrandmission();
 
     @Override
     public TransmissionDto save(TransmissionDto transmissionDto) {
-        Transmission transmission = mappingTrandmission.convertToEntity(transmissionDto);
-        daoTransmission.save(transmission);
-        transmissionDto.setId(transmission.getId());
-        return mappingTrandmission.convertToDTO(transmission);
+        Transmission transmission = mappingTransmission.convertToEntity(transmissionDto);
+        transmission = transmissionDAO.save(transmission);
+        return mappingTransmission.convertToDTO(transmission);
     }
 
     @Override
-    public TransmissionDto update(TransmissionDto transmissionDto) {
-        Transmission transmission = mappingTrandmission.convertToEntity(transmissionDto);
-        daoTransmission.update(transmission);
-        return mappingTrandmission.convertToDTO(transmission);
-    }
-
-    @Override
-    public TransmissionDto findById(TransmissionDto transmissionDto) {
-        Transmission transmission = mappingTrandmission.convertToEntity(transmissionDto);
-        transmission = daoTransmission.findById(transmission);
-        return mappingTrandmission.convertToDTO(transmission);
+    public void update(TransmissionDto transmissionDto) {
+        Transmission transmission = mappingTransmission.convertToEntity(transmissionDto);
+        transmissionDAO.update(transmission);
     }
 
     @Override
     public void delete(TransmissionDto transmissionDto) {
-        daoTransmission.findById(mappingTrandmission.convertToEntity(transmissionDto));
+        Transmission transmission = mappingTransmission.convertToEntity(transmissionDto);
+        transmissionDAO.delete(transmission);
+    }
+
+    @Override
+    public TransmissionDto findById(TransmissionDto transmissionDto) {
+        Transmission transmission = mappingTransmission.convertToEntity(transmissionDto);
+        transmission = transmissionDAO.findById(transmission);
+        return mappingTransmission.convertToDTO(transmission);
     }
 
     @Override
     public List<TransmissionDto> findAll() {
-        List<Transmission> transmissions = daoTransmission.findAll(Transmission.builder().build());
+        List<Transmission> transmissions = transmissionDAO.findAll(Transmission.builder().build());
         return transmissions.stream()
-                .map(mappingTrandmission::convertToDTO)
+                .map(mappingTransmission::convertToDTO)
                 .collect(Collectors.toList());
     }
 }

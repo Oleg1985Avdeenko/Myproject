@@ -17,7 +17,7 @@ import java.util.Set;
 @Builder
 @Entity
 @Table
-public class ModelOpnion extends DataEntity {
+public class ModelOption extends DataEntity {
 
     @Column
     private String salon;
@@ -41,7 +41,7 @@ public class ModelOpnion extends DataEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ModelOpnion opnion = (ModelOpnion) o;
+        ModelOption opnion = (ModelOption) o;
         return Objects.equals(getId(), opnion.getId());
     }
 

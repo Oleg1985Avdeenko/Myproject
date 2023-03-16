@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -35,7 +33,7 @@ public class Car extends DataEntity {
     @JoinColumn(name = "engine_id", nullable = false)
     private Engine carEngine;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+        @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "color_id", nullable = false)
     private Color  carColor;
 
@@ -45,9 +43,9 @@ public class Car extends DataEntity {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "model_option_id", nullable = false)
-    private ModelOpnion carOption;
+    private ModelOption carOption;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "order_id", nullable = false)
     private ClientOrder selectedCar;
 

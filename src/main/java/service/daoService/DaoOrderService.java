@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DaoOrderService implements Service<OrderDto> {
-    private final DAO<ClientOrder> daoClientOrder = new DaoClientOrderImpl();
+    private final DAO<ClientOrder> clientOrderDAO = new DaoClientOrderImpl();
 
     private final MappingService<ClientOrder, OrderDto> mappingOrder = new MappingOrder();
 
@@ -20,33 +20,32 @@ public class DaoOrderService implements Service<OrderDto> {
     @Override
     public OrderDto save(OrderDto orderDto) {
         ClientOrder clientOrder = mappingOrder.convertToEntity(orderDto);
-        daoClientOrder.save(clientOrder);
-        orderDto.setId(clientOrder.getId());
+        clientOrder = clientOrderDAO.save(clientOrder);
         return mappingOrder.convertToDTO(clientOrder);
     }
 
     @Override
-    public OrderDto update(OrderDto orderDto) {
+    public void update(OrderDto orderDto) {
         ClientOrder clientOrder = mappingOrder.convertToEntity(orderDto);
-        daoClientOrder.update(clientOrder);
-        return mappingOrder.convertToDTO(clientOrder);
+        clientOrderDAO.update(clientOrder);
+    }
+
+    @Override
+    public void delete(OrderDto orderDto) {
+        ClientOrder clientOrder = mappingOrder.convertToEntity(orderDto);
+        clientOrderDAO.delete(clientOrder);
     }
 
     @Override
     public OrderDto findById(OrderDto orderDto) {
         ClientOrder clientOrder = mappingOrder.convertToEntity(orderDto);
-        clientOrder = daoClientOrder.findById(clientOrder);
+        clientOrder = clientOrderDAO.findById(clientOrder);
         return mappingOrder.convertToDTO(clientOrder);
     }
 
     @Override
-    public void delete(OrderDto orderDto) {
-        daoClientOrder.findById(mappingOrder.convertToEntity(orderDto));
-    }
-
-    @Override
     public List<OrderDto> findAll() {
-        List<ClientOrder> orders = daoClientOrder.findAll(ClientOrder.builder().build());
+        List<ClientOrder> orders = clientOrderDAO.findAll(ClientOrder.builder().build());
         return orders.stream()
                 .map(mappingOrder::convertToDTO)
                 .collect(Collectors.toList());

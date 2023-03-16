@@ -1,7 +1,6 @@
 package service.dto;
 
 import entity.cars.Car;
-import entity.cars.ModelOpnion;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -32,6 +31,6 @@ public class OptionDto extends DataDto{
     @Column
     private Boolean fogLight;
 
-    @OneToMany(mappedBy = "carOption", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "carOption", cascade = CascadeType.PERSIST)
     private Set<Car> selectedOptions = new HashSet<>();
 }

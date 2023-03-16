@@ -37,7 +37,7 @@ public class Client extends DataEntity {
     @Column
     private String email;
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "client", cascade = CascadeType.PERSIST)
     private Set<ClientOrder> orders = new HashSet<>();
 
     @Override

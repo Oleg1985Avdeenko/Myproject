@@ -1,5 +1,6 @@
 package service.daoService;
 
+import entity.cars.Car;
 import entity.cars.Color;
 import service.Service;
 import service.dto.ColorDto;
@@ -14,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class DaoColorService  implements Service<ColorDto> {
 
-    private final DAO<Color> clientDAO = new DaoColorImpl();
+    private final DAO<Color> colorDAO = new DaoColorImpl();
 
     private final MappingService<Color, ColorDto> mappingColor = new MappingColor();
 
@@ -22,33 +23,32 @@ public class DaoColorService  implements Service<ColorDto> {
     @Override
     public ColorDto save(ColorDto colorDto) {
         Color color = mappingColor.convertToEntity(colorDto);
-        clientDAO.save(color);
-        colorDto.setId(color.getId());
+        color = colorDAO.save(color);
         return mappingColor.convertToDTO(color);
     }
 
     @Override
-    public ColorDto update(ColorDto colorDto) {
+    public void update(ColorDto colorDto) {
         Color color = mappingColor.convertToEntity(colorDto);
-        clientDAO.update(color);
-        return mappingColor.convertToDTO(color);
+        colorDAO.update(color);
+    }
+
+    @Override
+    public void delete(ColorDto colorDto) {
+        Color color = mappingColor.convertToEntity(colorDto);
+        colorDAO.delete(color);
     }
 
     @Override
     public ColorDto findById(ColorDto colorDto) {
         Color color = mappingColor.convertToEntity(colorDto);
-        color = clientDAO.findById(color);
+        color = colorDAO.findById(color);
         return mappingColor.convertToDTO(color);
     }
 
     @Override
-    public void delete(ColorDto colorDto) {
-        clientDAO.findById(mappingColor.convertToEntity(colorDto));
-    }
-
-    @Override
     public List<ColorDto> findAll() {
-        List<Color> colors = clientDAO.findAll(Color.builder().build());
+        List<Color> colors = colorDAO.findAll(Color.builder().build());
         return colors.stream()
                 .map(mappingColor::convertToDTO)
                 .collect(Collectors.toList());

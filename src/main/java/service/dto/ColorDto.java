@@ -20,6 +20,6 @@ public class ColorDto extends DataDto{
     @Column
     private String colorName;
 
-    @OneToMany(mappedBy = "carColor", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "carColor", cascade = CascadeType.PERSIST)
     private Set<Car> selectedColors = new HashSet<>();
 }

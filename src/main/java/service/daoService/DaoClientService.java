@@ -1,5 +1,6 @@
 package service.daoService;
 
+import entity.cars.Car;
 import service.Service;
 import service.dto.ClientDto;
 import service.mapping.MappingClient;
@@ -21,28 +22,28 @@ public class DaoClientService  implements Service<ClientDto> {
     @Override
     public ClientDto save(ClientDto clientDto) {
         Client client = mappingClient.convertToEntity(clientDto);
-        clientDAO.save(client);
-        clientDto.setId(client.getId());
+        client = clientDAO.save(client);
         return mappingClient.convertToDTO(client);
     }
 
     @Override
-    public ClientDto update(ClientDto clientDto) {
+    public void update(ClientDto clientDto) {
         Client client = mappingClient.convertToEntity(clientDto);
         clientDAO.update(client);
-        return mappingClient.convertToDTO(client);
+    }
+
+    @Override
+    public void delete(ClientDto clientDto) {
+        Client client = mappingClient.convertToEntity(clientDto);
+        clientDAO.delete(client);
     }
 
     @Override
     public ClientDto findById(ClientDto clientDto) {
         Client client = mappingClient.convertToEntity(clientDto);
         client = clientDAO.findById(client);
+        clientDto.setId(client.getId());
         return mappingClient.convertToDTO(client);
-    }
-
-    @Override
-    public void delete(ClientDto clientDto) {
-        clientDAO.findById(mappingClient.convertToEntity(clientDto));
     }
 
     @Override

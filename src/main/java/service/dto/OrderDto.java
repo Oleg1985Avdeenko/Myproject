@@ -17,10 +17,10 @@ import java.util.Set;
 @Builder
 @Table
 public class OrderDto extends DataDto{
-    @OneToMany(mappedBy = "dtoSelectedCar", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "dtoSelectedCar", cascade = CascadeType.PERSIST)
     private Set<Car> dtoSelectedCars = new HashSet<>();
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "client_dto_id", nullable = false)
     private Client clientDto;
 }

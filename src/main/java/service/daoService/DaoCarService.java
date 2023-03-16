@@ -20,16 +20,21 @@ public class DaoCarService implements Service<CarDto> {
     @Override
     public CarDto save(CarDto carDto) {
         Car car = mappingCar.convertToEntity(carDto);
-        carDAO.save(car);
+        car = carDAO.save(car);
         carDto.setId(car.getId());
         return mappingCar.convertToDTO(car);
     }
 
     @Override
-    public CarDto update(CarDto carDto) {
+    public void update(CarDto carDto) {
         Car car = mappingCar.convertToEntity(carDto);
         carDAO.update(car);
-        return mappingCar.convertToDTO(car);
+    }
+
+    @Override
+    public void delete(CarDto carDto) {
+        Car car = mappingCar.convertToEntity(carDto);
+        carDAO.delete(car);
     }
 
     @Override
@@ -40,14 +45,9 @@ public class DaoCarService implements Service<CarDto> {
     }
 
     @Override
-    public void delete(CarDto carDto) {
-        carDAO.findById(mappingCar.convertToEntity(carDto));
-    }
-
-    @Override
     public List<CarDto> findAll() {
-        List<Car> clients = carDAO.findAll(Car.builder().build());
-        return clients.stream()
+        List<Car> cars = carDAO.findAll(Car.builder().build());
+        return cars.stream()
                 .map(mappingCar::convertToDTO)
                 .collect(Collectors.toList());
     }

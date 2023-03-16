@@ -21,16 +21,21 @@ public class DaoUserService implements Service<UserDto> {
     @Override
     public UserDto save(UserDto userDto) {
         User user = mappingUser.convertToEntity(userDto);
-        userDAO.save(user);
+        user = userDAO.save(user);
         userDto.setId(user.getId());
         return mappingUser.convertToDTO(user);
     }
 
     @Override
-    public UserDto update(UserDto userDto) {
+    public void update(UserDto userDto) {
         User user = mappingUser.convertToEntity(userDto);
         userDAO.update(user);
-        return mappingUser.convertToDTO(user);
+    }
+
+    @Override
+    public void delete(UserDto userDto) {
+        User user = mappingUser.convertToEntity(userDto);
+        userDAO.delete(user);
     }
 
     @Override
@@ -38,11 +43,6 @@ public class DaoUserService implements Service<UserDto> {
         User user = mappingUser.convertToEntity(userDto);
        user = userDAO.findById(user);
         return mappingUser.convertToDTO(user);
-    }
-
-    @Override
-    public void delete(UserDto userDto) {
-        userDAO.findById(mappingUser.convertToEntity(userDto));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package service.daoService;
 
+import entity.cars.Car;
 import service.Service;
 import service.dto.EngineDto;
 import service.mapping.MappingEngine;
@@ -20,16 +21,20 @@ public class DaoEngineService implements Service<EngineDto> {
     @Override
     public EngineDto save(EngineDto engineDto) {
         Engine engine = mappingEngine.convertToEntity(engineDto);
-        engineDAO.save(engine);
-        engineDto.setId(engine.getId());
+        engine = engineDAO.save(engine);
         return mappingEngine.convertToDTO(engine);
     }
 
     @Override
-    public EngineDto update(EngineDto engineDto) {
+    public void update(EngineDto engineDto) {
         Engine engine = mappingEngine.convertToEntity(engineDto);
         engineDAO.update(engine);
-        return mappingEngine.convertToDTO(engine);
+    }
+
+    @Override
+    public void delete(EngineDto engineDto) {
+        Engine engine = mappingEngine.convertToEntity(engineDto);
+        engineDAO.delete(engine);
     }
 
     @Override
@@ -37,11 +42,6 @@ public class DaoEngineService implements Service<EngineDto> {
         Engine engine = mappingEngine.convertToEntity(engineDto);
         engine = engineDAO.findById(engine);
         return mappingEngine.convertToDTO(engine);
-    }
-
-    @Override
-    public void delete(EngineDto engineDto) {
-        engineDAO.findById(mappingEngine.convertToEntity(engineDto));
     }
 
     @Override

@@ -23,7 +23,7 @@
 
 <form action="servlet" method="get">
     <input type = "hidden" required name = "command" value = "view">
-    <button type="submit" class="w3-button ui-icon-caret-1-w">List</button>
+    <button type="submit" class="w3-button ui-icon-caret-1-w"><b>List</b></button>
 </form>
 </body>
 </html>

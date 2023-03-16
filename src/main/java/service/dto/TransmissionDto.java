@@ -20,6 +20,6 @@ public class TransmissionDto extends DataDto{
     @Column
     private String type;
 
-    @OneToMany(mappedBy = "carTransmission", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "carTransmission", cascade = CascadeType.PERSIST)
     private Set<Car> selectedTransmissions = new HashSet<>();
 }

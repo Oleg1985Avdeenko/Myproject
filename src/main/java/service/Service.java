@@ -6,11 +6,11 @@ public interface Service<T> {
 
     T save(T object);
 
-    T update(T object);
-
-    T findById(T object);
+    void update(T object);
 
     void delete(T object);
+
+    T findById(T object);
 
     List<T> findAll();
 }

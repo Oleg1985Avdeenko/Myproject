@@ -20,10 +20,10 @@ import java.util.Set;
 @Table
 public class ClientOrder extends DataEntity {
 
-    @OneToMany(mappedBy = "selectedCar", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "selectedCar", cascade = CascadeType.PERSIST)
     private Set<Car> selectedCars = new HashSet<>();
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "client_id", nullable = false)
     private Client client;
 

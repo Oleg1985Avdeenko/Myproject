@@ -6,48 +6,47 @@ import service.mapping.MappingOption;
 import service.mapping.MappingService;
 import dao.DaoModelOptionImpl;
 import dao.interfaces.DAO;
-import entity.cars.ModelOpnion;
+import entity.cars.ModelOption;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class DaoModelOptionService implements Service<OptionDto> {
-    private final DAO<ModelOpnion> opnionDAO = new DaoModelOptionImpl();
+    private final DAO<ModelOption> optionDAO = new DaoModelOptionImpl();
 
-    private final MappingService<ModelOpnion, OptionDto> mappingOption = new MappingOption();
+    private final MappingService<ModelOption, OptionDto> mappingOption = new MappingOption();
 
 
     @Override
     public OptionDto save(OptionDto optionDto) {
-        ModelOpnion modelOpnion = mappingOption.convertToEntity(optionDto);
-        opnionDAO.save(modelOpnion);
-        optionDto.setId(modelOpnion.getId());
+        ModelOption modelOpnion = mappingOption.convertToEntity(optionDto);
+        modelOpnion = optionDAO.save(modelOpnion);
         return mappingOption.convertToDTO(modelOpnion);
     }
 
     @Override
-    public OptionDto update(OptionDto optionDto) {
-        ModelOpnion modelOpnion = mappingOption.convertToEntity(optionDto);
-        opnionDAO.update(modelOpnion);
-        return mappingOption.convertToDTO(modelOpnion);
-    }
-
-    @Override
-    public OptionDto findById(OptionDto optionDto) {
-        ModelOpnion modelOpnion = mappingOption.convertToEntity(optionDto);
-        modelOpnion = opnionDAO.findById(modelOpnion);
-        return mappingOption.convertToDTO(modelOpnion);
+    public void update(OptionDto optionDto) {
+        ModelOption modelOpnion = mappingOption.convertToEntity(optionDto);
+        optionDAO.update(modelOpnion);
     }
 
     @Override
     public void delete(OptionDto optionDto) {
-        opnionDAO.findById(mappingOption.convertToEntity(optionDto));
+        ModelOption modelOpnion = mappingOption.convertToEntity(optionDto);
+        optionDAO.delete(modelOpnion);
+    }
+
+    @Override
+    public OptionDto findById(OptionDto optionDto) {
+        ModelOption modelOpnion = mappingOption.convertToEntity(optionDto);
+        modelOpnion = optionDAO.findById(modelOpnion);
+        return mappingOption.convertToDTO(modelOpnion);
     }
 
     @Override
     public List<OptionDto> findAll() {
-        List<ModelOpnion> modelOpnions = opnionDAO.findAll(ModelOpnion.builder().build());
-        return modelOpnions.stream()
+        List<ModelOption> modelOptions = optionDAO.findAll(ModelOption.builder().build());
+        return modelOptions.stream()
                 .map(mappingOption::convertToDTO)
                 .collect(Collectors.toList());
     }

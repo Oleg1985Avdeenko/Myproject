@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DaoModelService implements Service<ModelDto> {
-    private final DAO<Model> clientDAO = new DaoModelImpl();
+    private final DAO<Model> modelDAO = new DaoModelImpl();
 
     private final MappingService<Model, ModelDto> mappingModel = new MappingModel();
 
@@ -21,33 +21,32 @@ public class DaoModelService implements Service<ModelDto> {
     @Override
     public ModelDto save(ModelDto modelDto) {
         Model model = mappingModel.convertToEntity(modelDto);
-        clientDAO.save(model);
-        modelDto.setId(model.getId());
+        model = modelDAO.save(model);
         return mappingModel.convertToDTO(model);
     }
 
     @Override
-    public ModelDto update(ModelDto modelDto) {
+    public void update(ModelDto modelDto) {
         Model model = mappingModel.convertToEntity(modelDto);
-        clientDAO.update(model);
-        return mappingModel.convertToDTO(model);
+        modelDAO.update(model);
+    }
+
+    @Override
+    public void delete(ModelDto modelDto) {
+        Model model = mappingModel.convertToEntity(modelDto);
+        modelDAO.delete(model);
     }
 
     @Override
     public ModelDto findById(ModelDto modelDto) {
         Model model = mappingModel.convertToEntity(modelDto);
-        model = clientDAO.findById(model);
+        model = modelDAO.findById(model);
         return mappingModel.convertToDTO(model);
     }
 
     @Override
-    public void delete(ModelDto modelDto) {
-        clientDAO.findById(mappingModel.convertToEntity(modelDto));
-    }
-
-    @Override
     public List<ModelDto> findAll() {
-        List<Model> models = clientDAO.findAll(Model.builder().build());
+        List<Model> models = modelDAO.findAll(Model.builder().build());
         return models.stream()
                 .map(mappingModel::convertToDTO)
                 .collect(Collectors.toList());
