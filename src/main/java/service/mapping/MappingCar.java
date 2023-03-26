@@ -1,6 +1,7 @@
 package service.mapping;
 
 import entity.cars.Car;
+import service.MappingService;
 import service.dto.CarDto;
 
 public class MappingCar implements MappingService<Car, CarDto> {

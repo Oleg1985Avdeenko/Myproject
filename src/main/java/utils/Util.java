@@ -2,13 +2,38 @@ package utils;
 
 public class Util {
 
-    public static final String JSP_VIEW_JSP = "jsp/view.jsp";
 
     public static final String COMMAND = "command";
 
-    public static final String VIEW = "view";
+    public static final String JSP_VIEW_CAR = "/jsp/view/viewCar.jsp";
 
-    public static final String EDIT = "edit";
+    public static final String JSP_VIEW_CLIENT = "/jsp/view/viewClient.jsp";
+
+    public static final String JSP_VIEW_COLOR = "/jsp/view/viewColor.jsp";
+
+    public static final String JSP_VIEW_ENGINE = "/jsp/view/viewEngine.jsp";
+    public static final String JSP_VIEW_MODEL = "/jsp/view/viewModel.jsp";
+    public static final String JSP_VIEW_OPTION = "/jsp/view/viewOption.jsp";
+    public static final String JSP_VIEW_ORDER = "/jsp/view/viewOrder.jsp";
+    public static final String JSP_VIEW_TRANSMISSION = "/jsp/view/viewTransmission.jsp";
+    public static final String JSP_ADD_CAR = "/jsp/add/addCar.jsp";
+    public static final String JSP_ADD_CLIENT = "/jsp/add/addClient.jsp";
+    public static final String JSP_ADD_COLOR = "/jsp/add/addColor.jsp";
+    public static final String JSP_ADD_ENGINE = "/jsp/add/addEngine.jsp";
+    public static final String JSP_ADD_MODEL = "/jsp/add/addModel.jsp";
+    public static final String JSP_ADD_OPTION = "/jsp/add/addOption.jsp";
+    public static final String JSP_ADD_ORDER = "/jsp/add/addOrder.jsp";
+    public static final String JSP_ADD_TRANSMISSION = "/jsp/add/addTransmission.jsp";
+    public static final String JSP_UPDATE_CAR = "/jsp/update/updateCar.jsp";
+    public static final String JSP_UPDATE_CLIENT = "/jsp/update/updateClient.jsp";
+    public static final String JSP_UPDATE_COLOR = "/jsp/update/updateColor.jsp";
+    public static final String JSP_UPDATE_ENGINE = "/jsp/update/updateEngine.jsp";
+    public static final String JSP_UPDATE_MODEL = "/jsp/update/updateModel.jsp";
+    public static final String JSP_UPDATE_OPTION = "/jsp/update/updateOption.jsp";
+    public static final String JSP_UPDATE_ORDER = "/jsp/update/updateOrder.jsp";
+    public static final String JSP_UPDATE_TRANSMISSION = "/jsp/update/updateTransmission.jsp";
+
+    public static final String GET = "GET";
 
     public static final String ADD = "add";
 
@@ -17,7 +42,6 @@ public class Util {
     public static final String CAR_ID = "carId";
 
     public static final String PRICE = "price";
-
     public static final String AVAILABILITY = "availability";
     public static final String COLOR_ID = "colorId";
     public static final String COLOR_NAME = "colorName";
@@ -45,11 +69,10 @@ public class Util {
     public static final String CARS = "cars";
     public static final String MODELS = "models";
     public static final String COLORS = "colors";
+    public static final String ENGINES = "engines";
+    public static final String OPTIONS = "options";
+    public static final String TRANSMISSIONS = "transmissions";
+    public static final String CLIENTS = "clients";
+    public static final String ORDERS = "orders";
 
-    public static final String JSP_EDIT_JSP = "jsp/edit.jsp";
-
-    public static final String JSP_ADD_JSP = "jsp/add.jsp";
-
-    public static final String VIEW_COLOR = "viewColor";
-    public static final String JSP_VIEW_COLOR_JSP = "jsp/viewColor.jsp";
 }

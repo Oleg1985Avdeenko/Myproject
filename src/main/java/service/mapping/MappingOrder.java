@@ -1,6 +1,7 @@
 package service.mapping;
 
 import entity.clients.ClientOrder;
+import service.MappingService;
 import service.dto.OrderDto;
 
 public class MappingOrder implements MappingService<ClientOrder, OrderDto> {

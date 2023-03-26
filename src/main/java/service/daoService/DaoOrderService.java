@@ -3,9 +3,9 @@ package service.daoService;
 import service.Service;
 import service.dto.OrderDto;
 import service.mapping.MappingOrder;
-import service.mapping.MappingService;
-import dao.DaoClientOrderImpl;
-import dao.interfaces.DAO;
+import service.MappingService;
+import dao.impl.DaoClientOrderImpl;
+import dao.DAO;
 import entity.clients.ClientOrder;
 
 import java.util.List;

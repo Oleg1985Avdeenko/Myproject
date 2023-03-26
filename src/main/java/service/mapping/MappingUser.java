@@ -1,6 +1,7 @@
 package service.mapping;
 
 import entity.User;
+import service.MappingService;
 import service.dto.UserDto;
 
 public class MappingUser implements MappingService<User, UserDto> {

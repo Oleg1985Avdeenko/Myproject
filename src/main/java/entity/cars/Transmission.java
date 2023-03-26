@@ -1,23 +1,24 @@
 package entity.cars;
 
-import entity.DataEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
 @Entity
 @Table
-public class Transmission extends DataEntity {
+public class Transmission {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer id;
 
     @Column
     private String type;
@@ -25,16 +26,4 @@ public class Transmission extends DataEntity {
     @OneToMany(mappedBy = "carTransmission", cascade = CascadeType.PERSIST)
     private Set<Car> selectedTransmissions = new HashSet<>();
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Transmission transmission = (Transmission) o;
-        return Objects.equals(getId(), transmission.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
 }

@@ -1,23 +1,24 @@
 package entity.cars;
 
-import entity.DataEntity;
 import entity.clients.ClientOrder;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Objects;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
 @Entity
 @Table
-public class Car extends DataEntity {
+public class Car {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer id;
 
     @Column
     private BigDecimal price;
@@ -27,15 +28,15 @@ public class Car extends DataEntity {
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "model_id", nullable = false)
-    private Model carModel ;
+    private Model carModel;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "engine_id", nullable = false)
     private Engine carEngine;
 
-        @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "color_id", nullable = false)
-    private Color  carColor;
+    private Color carColor;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "transmission_id", nullable = false)
@@ -49,16 +50,4 @@ public class Car extends DataEntity {
     @JoinColumn(name = "order_id", nullable = false)
     private ClientOrder selectedCar;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return Objects.equals(getId(), car.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
 }

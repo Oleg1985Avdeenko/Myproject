@@ -3,9 +3,9 @@ package service.daoService;
 import service.Service;
 import service.dto.CarDto;
 import service.mapping.MappingCar;
-import service.mapping.MappingService;
-import dao.DaoCarImpl;
-import dao.interfaces.DAO;
+import service.MappingService;
+import dao.impl.DaoCarImpl;
+import dao.DAO;
 import entity.cars.Car;
 
 import java.util.List;
@@ -51,4 +51,9 @@ public class DaoCarService implements Service<CarDto> {
                 .map(mappingCar::convertToDTO)
                 .collect(Collectors.toList());
     }
+
+//    @Override
+//    public Integer getNumberOfRows() {
+//        return carDAO.getNumberOfRows();
+//    }
 }

@@ -3,9 +3,9 @@ package service.daoService;
 import service.Service;
 import service.dto.OptionDto;
 import service.mapping.MappingOption;
-import service.mapping.MappingService;
-import dao.DaoModelOptionImpl;
-import dao.interfaces.DAO;
+import service.MappingService;
+import dao.impl.DaoModelOptionImpl;
+import dao.DAO;
 import entity.cars.ModelOption;
 
 import java.util.List;

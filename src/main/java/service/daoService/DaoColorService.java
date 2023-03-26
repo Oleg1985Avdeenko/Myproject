@@ -1,13 +1,12 @@
 package service.daoService;
 
-import entity.cars.Car;
 import entity.cars.Color;
 import service.Service;
 import service.dto.ColorDto;
 import service.mapping.MappingColor;
-import service.mapping.MappingService;
-import dao.DaoColorImpl;
-import dao.interfaces.DAO;
+import service.MappingService;
+import dao.impl.DaoColorImpl;
+import dao.DAO;
 
 
 import java.util.List;

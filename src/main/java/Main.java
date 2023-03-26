@@ -1,12 +1,10 @@
-import dao.*;
-import dao.interfaces.DAO;
+import dao.DAO;
+import dao.impl.*;
 import entity.User;
 import entity.cars.*;
 import entity.clients.Client;
 import entity.clients.ClientOrder;
 import utils.HibernateUtil;
-
-import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {

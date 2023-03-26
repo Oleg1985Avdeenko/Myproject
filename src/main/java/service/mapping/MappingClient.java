@@ -1,6 +1,7 @@
 package service.mapping;
 
 import entity.clients.Client;
+import service.MappingService;
 import service.dto.ClientDto;
 
 public class MappingClient implements MappingService<Client, ClientDto> {

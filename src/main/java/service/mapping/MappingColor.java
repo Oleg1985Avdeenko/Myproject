@@ -1,6 +1,7 @@
 package service.mapping;
 
 import entity.cars.Color;
+import service.MappingService;
 import service.dto.ColorDto;
 
 public class MappingColor implements MappingService<Color, ColorDto> {

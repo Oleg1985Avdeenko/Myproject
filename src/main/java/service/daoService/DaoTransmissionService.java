@@ -2,10 +2,10 @@ package service.daoService;
 
 import service.Service;
 import service.dto.TransmissionDto;
-import service.mapping.MappingService;
+import service.MappingService;
 import service.mapping.MappingTrandmission;
-import dao.DaoTransmissionImpl;
-import dao.interfaces.DAO;
+import dao.impl.DaoTransmissionImpl;
+import dao.DAO;
 import entity.cars.Transmission;
 
 import java.util.List;

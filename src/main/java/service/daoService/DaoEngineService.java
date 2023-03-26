@@ -1,12 +1,11 @@
 package service.daoService;
 
-import entity.cars.Car;
 import service.Service;
 import service.dto.EngineDto;
 import service.mapping.MappingEngine;
-import service.mapping.MappingService;
-import dao.DaoEngineImpl;
-import dao.interfaces.DAO;
+import service.MappingService;
+import dao.impl.DaoEngineImpl;
+import dao.DAO;
 import entity.cars.Engine;
 
 import java.util.List;

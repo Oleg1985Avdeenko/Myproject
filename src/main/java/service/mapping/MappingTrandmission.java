@@ -1,6 +1,7 @@
 package service.mapping;
 
 import entity.cars.Transmission;
+import service.MappingService;
 import service.dto.TransmissionDto;
 
 public class MappingTrandmission implements MappingService<Transmission, TransmissionDto> {

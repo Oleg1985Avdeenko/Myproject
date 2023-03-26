@@ -13,4 +13,6 @@ public interface Service<T> {
     T findById(T object);
 
     List<T> findAll();
+
+//    Integer getNumberOfRows();
 }

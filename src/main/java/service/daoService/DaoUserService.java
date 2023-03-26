@@ -1,11 +1,11 @@
 package service.daoService;
 
-import dao.DaoUserImpl;
-import dao.interfaces.DAO;
+import dao.impl.DaoUserImpl;
+import dao.DAO;
 import entity.User;
 import service.Service;
 import service.dto.UserDto;
-import service.mapping.MappingService;
+import service.MappingService;
 import service.mapping.MappingUser;
 
 import java.util.List;

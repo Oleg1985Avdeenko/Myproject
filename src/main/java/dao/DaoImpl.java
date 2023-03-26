@@ -1,14 +1,23 @@
 package dao;
 
-import dao.interfaces.DAO;
 import utils.HibernateUtil;
 
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class DaoImpl<T> implements DAO<T> {
 
     public static final String FROM = "from ";
+
+//    private final Class<T> objectClass;
+//
+//
+//    public DaoImpl(Class<T> objectClass) {
+//        this.objectClass = objectClass;
+//    }
 
     @Override
     public T save(T object) {
@@ -56,4 +65,20 @@ public class DaoImpl<T> implements DAO<T> {
         em.close();
         return objects;
     }
+
+//    @Override
+//    public Integer getNumberOfRows() {
+//        EntityManager em = HibernateUtil.getEntityManager();
+//        em.getTransaction().begin();
+//
+//        CriteriaBuilder builder = em.getCriteriaBuilder();
+//        CriteriaQuery<T> criteria = builder.createQuery(objectClass);
+//        Root<T> root = criteria.from(objectClass);
+//
+//        Integer size = em.createQuery(criteria).getResultList().size();
+//
+//        em.getTransaction().commit();
+//        em.close();
+//        return size;
+//    }
 }
